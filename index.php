@@ -15,15 +15,18 @@
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <?php $username="multitoa_admin";$password="tasmball987";$database="multitoa_mtsc";
+        <?php $username=" ";$password=" ";$database=" ";
         mysql_connect(localhost,$username,$password);
         @mysql_select_db($database) or die( "Unable to select database");
-        $query="SELECT * FROM tablename";
+        $query="SELECT * FROM Statistics ORDER BY wins DESC";
         $result=mysql_query($query);
         $num=mysql_num_rows($result);
         mysql_close(); ?>
+
+        <?php echo "Total MTSC Fighters: $num" ; ?>
         <table border="0" cellspacing="2" cellpadding="2">
         <tr>
+            <td>Rank</td>
             <td>Name</td>
             <td>Wins</td>
             <td>Losses</td>
@@ -33,25 +36,26 @@
             <td>Mains</td>
         </tr>
 
-        <?php echo "there are $num" ; ?>
-        <?php $i=0;while ($i < $num) {
-            $f1=mysql_result($result,$i,"Name");
-            $f2=mysql_result($result,$i,"Wins");
-            $f3=mysql_result($result,$i,"Losses");
-            $f4=mysql_result($result,$i,"Heavyweight Championships");
-            $f5=mysql_result($result,$i,"Middleweight Championships");
-            $f6=mysql_result($result,$i,"Lightweight Championships");
-            $f7=mysql_result($result,$i,"Mains"); ?>
-        <tr>
-            <td><?php echo $f1; ?></td>
-            <td><?php echo $f2; ?></td>
-            <td><?php echo $f3; ?></td>
-            <td><?php echo $f4; ?></td>
-            <td><?php echo $f5; ?></td>
-            <td><?php echo $f6; ?></td>
-            <td><?php echo $f7; ?></td>
-        </tr>
-        <?php $i++;} ?>
+        <?php
+        $i = 1;
+        while ($row = mysql_fetch_assoc($result)) {
+        ?>
+            <tr>
+                <td><?php echo $i; ?></td>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['wins']; ?></td>
+                <td><?php echo $row['losses']; ?></td>
+                <td><?php echo $row['heavy-champs']; ?></td>
+                <td><?php echo $row['middle-champs']; ?></td>
+                <td><?php echo $row['light-champs']; ?></td>
+                <td><?php echo $row['mains']; ?></td>
+            </tr>
+        <?php
+            $i++;
+        }
+        ?>
+
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>

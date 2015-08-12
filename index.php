@@ -15,63 +15,39 @@
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <?php$username="multitoa_jag";$password="Ifgtsts987";$database="multitoa_mtsc";
+        <?php $username="multitoa_admin";$password="tasmball987";$database="multitoa_mtsc";
         mysql_connect(localhost,$username,$password);
         @mysql_select_db($database) or die( "Unable to select database");
         $query="SELECT * FROM tablename";$result=mysql_query($query);
-        $num=mysql_numrows($result);mysql_close();?>
+        $num=mysql_numrows($result);mysql_close(); ?>
         <table border="0" cellspacing="2" cellpadding="2">
         <tr>
-        <td>
-        <font face="Arial, Helvetica, sans-serif">Name</font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif">Wins</font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif">Losses</font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif">Lightweight Championships</font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif">Middleweight Championships</font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif">Heavyweight Championships</font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif">Mains</font>
-        </td>
+            <td>Name</td>
+            <td>Wins</td>
+            <td>Losses</td>
+            <td>Lightweight Championships</td>
+            <td>Middleweight Championships</td>
+            <td>Heavyweight Championships</td>
+            <td>Mains</td>
         </tr>
-        <?php$i=0;while ($i < $num) {$f1=mysql_result($result,$i,"field1");
-        $f2=mysql_result($result,$i,"field2");$f3=mysql_result($result,$i,"field3");
-        $f4=mysql_result($result,$i,"field4");$f5=mysql_result($result,$i,"field5");
-        $f6=mysql_result($result,$i,"field6");$f7=mysql_result($result,$i,"field7");?>
+        <?php $i=0;while ($i < $num) {
+            $f1=mysql_result($result,$i,"Name");
+            $f2=mysql_result($result,$i,"field2");
+            $f3=mysql_result($result,$i,"field3");
+            $f4=mysql_result($result,$i,"field4");
+            $f5=mysql_result($result,$i,"field5");
+            $f6=mysql_result($result,$i,"field6");
+            $f7=mysql_result($result,$i,"field7"); ?>
         <tr>
-        <td>
-        <font face="Arial, Helvetica, sans-serif"><?php echo $f1; ?></font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif"><?php echo $f2; ?></font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif"><?php echo $f3; ?></font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif"><?php echo $f4; ?></font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif"><?php echo $f5; ?></font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif"><?php echo $f6; ?></font>
-        </td>
-        <td>
-        <font face="Arial, Helvetica, sans-serif"><?php echo $f7; ?></font>
-        </td>
+            <td><?php echo $f1; ?></td>
+            <td><?php echo $f2; ?></td>
+            <td><?php echo $f3; ?></td>
+            <td><?php echo $f4; ?></td>
+            <td><?php echo $f5; ?></td>
+            <td><?php echo $f6; ?></td>
+            <td><?php echo $f7; ?></td>
         </tr>
-        <?php$i++;}?>
+        <?php $i++;} ?>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>

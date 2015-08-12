@@ -32,12 +32,12 @@
         </tr>
         <?php $i=0;while ($i < $num) {
             $f1=mysql_result($result,$i,"Name");
-            $f2=mysql_result($result,$i,"field2");
-            $f3=mysql_result($result,$i,"field3");
-            $f4=mysql_result($result,$i,"field4");
-            $f5=mysql_result($result,$i,"field5");
-            $f6=mysql_result($result,$i,"field6");
-            $f7=mysql_result($result,$i,"field7"); ?>
+            $f2=mysql_result($result,$i,"Wins");
+            $f3=mysql_result($result,$i,"Losses");
+            $f4=mysql_result($result,$i,"Heavyweight Championships");
+            $f5=mysql_result($result,$i,"Middleweight Championships");
+            $f6=mysql_result($result,$i,"Lightweight Championships");
+            $f7=mysql_result($result,$i,"Mains"); ?>
         <tr>
             <td><?php echo $f1; ?></td>
             <td><?php echo $f2; ?></td>

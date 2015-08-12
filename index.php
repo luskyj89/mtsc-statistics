@@ -18,8 +18,10 @@
         <?php $username="multitoa_admin";$password="tasmball987";$database="multitoa_mtsc";
         mysql_connect(localhost,$username,$password);
         @mysql_select_db($database) or die( "Unable to select database");
-        $query="SELECT * FROM tablename";$result=mysql_query($query);
-        $num=mysql_numrows($result);mysql_close(); ?>
+        $query="SELECT * FROM tablename";
+        $result=mysql_query($query);
+        $num=mysql_num_rows($result);
+        mysql_close(); ?>
         <table border="0" cellspacing="2" cellpadding="2">
         <tr>
             <td>Name</td>
@@ -30,6 +32,8 @@
             <td>Heavyweight Championships</td>
             <td>Mains</td>
         </tr>
+
+        <?php echo "there are $num" ; ?>
         <?php $i=0;while ($i < $num) {
             $f1=mysql_result($result,$i,"Name");
             $f2=mysql_result($result,$i,"Wins");

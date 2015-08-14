@@ -39,9 +39,9 @@
                     <td>Name</td>
                     <td>Wins</td>
                     <td>Losses</td>
-                    <td>Lightweight Championships</td>
-                    <td>Middleweight Championships</td>
                     <td>Heavyweight Championships</td>
+                    <td>Middleweight Championships</td>
+                    <td>Lightweight Championships</td>
                     <td>Mains</td>
                 </tr>
 
